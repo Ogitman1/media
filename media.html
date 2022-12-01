@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <div>
+        <input type="number" id="med1">
+        <input type="number" id="med2">
+        <input type="submit" id="tot">
+    </div>
+    <div id="camp">
+
+    </div>
+</header>
+    <script>
+        var tot = document.getElementById("tot");
+        tot.addEventListener("click", function(c, d){
+           let a = document.getElementById("med1").value;
+           let b = document.getElementById("med2").value;
+           let space = document.getElementById("camp");
+           var c = parseInt(a);
+           var d = parseInt(b);
+            if(c <0 || c > 10 || d < 0 || d > 10){
+                return space.innerHTML = "Esses números são inválidos pois não estão no intervalo de 1 a 10";
+            }
+           else{
+            return space.innerHTML = `A média da soma dos números ${c} e ${d} é ${c/2 + d/2} `
+        }
+        }
+        )
+    </script>
+</body>
+</html>
