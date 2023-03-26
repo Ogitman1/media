@@ -4,34 +4,159 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculador de média</title>
+    <link rel ="stylesheet" type="text/css" href="global.css"/>
+
+</link>
 </head>
 <body>
     <header>
-    <div>
-        <input type="number" id="med1">
-        <input type="number" id="med2">
+      <h1> Calculador de média</h1>
+    </header>
+    <div id="inputs">
+      <input type="number" id="med1" placeholder="Primeiro Valor"> 
+        <input type="number" id="med2" placeholder="Segundo Valor">
+      </div>
+    <div id="btn">
+        
+        
+        <button id="n0">0</button>
+        <button id="n1">1</button>
+        <button id="n2">2</button>
+        <button id="n3">3</button>
+        <button id="n4">4</button>
+        <button id="n5">5</button>
+        <button id="n6">6</button>
+        <button id="n7">7</button>
+        <button id="n8">8</button>
+        <button id="n9">9</button> 
+        <button id="del">Delete</button>
+      </div>
+        <div id="btn1">
+        <button id="0" class="nn">0</button>
+        <button id="1" class="nn">1</button>
+        <button id="2" class="nn">2</button>
+        <button id="3" class="nn">3</button>
+        <button id="4" class="nn">4</button>
+        <button id="5" class="nn">5</button>
+        <button id="6" class="nn">6</button>
+        <button id="7" class="nn">7</button>
+        <button id="8" class="nn">8</button>
+        <button id="9" class="nn">9</button>
         <input type="submit" id="tot">
-    </div>
+      </div>
+   
     <div id="camp">
 
     </div>
-</header>
+
     <script>
+  var n0 =  document.getElementById("n0");
+  var n1 =  document.getElementById("n1");
+  var n2 =  document.getElementById("n2");
+  var n3 =  document.getElementById("n3");
+  var n4 =  document.getElementById("n4");
+  var n5 =  document.getElementById("n5");
+  var n6 =  document.getElementById("n6");
+  var n7 =  document.getElementById("n7");
+  var n8 =  document.getElementById("n8");
+  var n9 =  document.getElementById("n9");
+
+  var mn0 =  document.getElementById("0");
+  var mn1 =  document.getElementById("1");
+  var mn2 =  document.getElementById("2");
+  var mn3 =  document.getElementById("3");
+  var mn4 =  document.getElementById("4");
+  var mn5 =  document.getElementById("5");
+  var mn6 =  document.getElementById("6");
+  var mn7 =  document.getElementById("7");
+  var mn8 =  document.getElementById("8");
+  var mn9 =  document.getElementById("9");
+  var del = document.getElementById("del");
+  var med1 = document.getElementById("med1");
+  var med2 = document.getElementById("med2");
+  
+  var nn = document.querySelectorAll("nn");
+ 
+  n0.addEventListener("click", function(){
+    
+    med1.value += "0";
+  })
+  n1.addEventListener("click", function(){
+    med1.value += "1";
+  })
+  n2.addEventListener("click", function(){
+    med1.value += "2";
+  })
+  n3.addEventListener("click", function(){
+    med1.value += "3";
+  })
+  n4.addEventListener("click", function(){
+    med1.value += "4";
+  })
+  n5.addEventListener("click", function() {
+    med1.value += "5"; 
+  })
+  n6.addEventListener("click", function() {
+    med1.value += "6";
+  })
+  n7.addEventListener("click", function(){
+    med1.value += "7";
+  })
+  n8.addEventListener("click", function(){
+    med1.value += "8";
+  })
+  n9.addEventListener("click", function(){
+    med1.value += "9";
+  })
+  mn0.addEventListener("click", function(){
+    med2.value += "0"});
+  mn1.addEventListener("click", function(){
+    med2.value += "1";
+  })
+  mn2.addEventListener("click", function(){
+    med2.value += "2";
+  })
+  mn3.addEventListener("click", function(){
+    med2.value += "3";
+  })
+  mn4.addEventListener("click", function(){
+    med2.value += "4";
+  })
+  mn5.addEventListener("click", function() {
+    med2.value += "5"; 
+  })
+  mn6.addEventListener("click", function() {
+    med2.value += "6";
+  })
+  mn7.addEventListener("click", function(){
+    med2.value += "7";
+  })
+  mn8.addEventListener("click", function(){
+    med2.value += "8";
+  })
+  mn9.addEventListener("click", function(){
+    med2.value += "9";
+  })
+  
+  del.addEventListener("click", function(){
+    med1.value = "";
+  })
+  
+  
         var tot = document.getElementById("tot");
-        tot.addEventListener("click", function(c, d){
-           let a = document.getElementById("med1").value;
-           let b = document.getElementById("med2").value;
+        tot.addEventListener("click", function(){
+           let a = parseInt(document.getElementById("med1").value);
+           let b = parseInt(document.getElementById("med2").value);
            let space = document.getElementById("camp");
-           var c = parseInt(a);
-           var d = parseInt(b);
-            if(c <0 || c > 10 || d < 0 || d > 10){
+            if(a <0 || a > 10 || b < 0 || b > 10){
                 return space.innerHTML = "Esses números são inválidos pois não estão no intervalo de 1 a 10";
             }
            else{
-            return space.innerHTML = `A média da soma dos números ${c} e ${d} é ${c/2 + d/2} `
+            return space.innerHTML = `A média da soma dos números ${a} e ${b} é ${(a + b)/2}! `
         }
         }
+        
         )
     </script>
 </body>
